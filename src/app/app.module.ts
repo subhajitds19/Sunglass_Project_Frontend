@@ -14,6 +14,11 @@ import {HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
+import { DetailsComponent } from './components/details/details.component';
+import { StorageService } from './services/storage.service';
+import { ProfileComponent } from './components/profile/profile.component';
+import { CartServiceService } from './services/cart-service.service';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -26,7 +31,10 @@ import { LoginComponent } from './components/login/login.component';
     GlassesComponent,
     ContactComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    DetailsComponent,
+    ProfileComponent,
+    CartComponent
    
   ],
   imports: [
@@ -35,7 +43,7 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, StorageService, CartServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

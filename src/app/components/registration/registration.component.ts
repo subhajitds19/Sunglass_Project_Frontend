@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-registration',
@@ -7,19 +9,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  registaionInputValue!: FormGroup;
+  regValue!: FormGroup;
   setectedImg!: File;
   changeType: boolean = true;
   visiable: boolean = true;
 
-  constructor() { }
+  constructor(private userSer:UserService, private route:Router) { }
 
   ngOnInit(): void {
-    this.registaionInputValue = new FormGroup({
-      // name: new FormControl(''),
-      // email: new FormControl(''),
-      // contact: new FormControl(''),
-      // password: new FormControl(''),
+    this.regValue = new FormGroup({
+      
 
       name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern("^[A-Z]{1}[a-z]{2,}$")]),
       email: new FormControl('', [Validators.required, Validators.pattern("([a-z0-9.-]+)@([a-z]{2,15}).([a-z.]{2,10})$")]),
@@ -40,7 +39,20 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("Form value Recived:", this.registaionInputValue.value);
+    console.log("Form value Recived:", this.regValue.value);
+    const formdata : FormData = new FormData();
+
+    formdata.append('name', this.regValue.value.name)
+    formdata.append('contact', this.regValue.value.contact)
+    formdata.append('email', this.regValue.value.email)
+    formdata.append('password', this.regValue.value.password)
+    formdata.append('image', this.setectedImg, this.setectedImg.name)
+    this.userSer.user_reg(formdata).subscribe((res:any)=>{
+         console.log("reg", res);
+         alert("Registration Successfully");
+         this.route.navigate(['/login']);
+         
+    })
   }
 
 }

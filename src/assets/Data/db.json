@@ -1,0 +1,64 @@
+{
+  "cart": [
+    {
+      "_id": "64c29fd39cecd674ee67dd8f",
+      "itemName": "BLACK JONES",
+      "itemDetails": "BLACK JONES Polarized Sunglasses For Men and Women Wayfarer UV Protection Aviator Shape Goggles Sunglass Gun-Metal (Black)-Pack of 1",
+      "price": "499",
+      "image": "BLACK JONES.jpg",
+      "status": true,
+      "createdAt": "2023-07-27T16:48:19.036Z",
+      "updatedAt": "2023-07-27T16:48:19.036Z",
+      "__v": 0,
+      "email": "rahul@gmail.com",
+      "quantity": 1,
+      "sub_total": 499,
+      "id": 1
+    },
+    {
+      "_id": "64c682a3239c6c9294dba217",
+      "itemName": "Anemxer",
+      "itemDetails": "Anemxer® CX-RR Original Polarized Sunglasses for Men and Women Shatterproof Stylish Branded with 100% UV Protection for Outdoor Sunlight Usage, Hiking, Picnic and Sports(2023)",
+      "price": "599",
+      "image": "Anemxer.jpg",
+      "status": true,
+      "createdAt": "2023-07-30T15:32:51.879Z",
+      "updatedAt": "2023-07-30T15:32:51.879Z",
+      "__v": 0,
+      "email": "rahul@gmail.com",
+      "quantity": 3,
+      "sub_total": 1797,
+      "id": 2
+    },
+    {
+      "_id": "64c29fd39cecd674ee67dd8f",
+      "itemName": "BLACK JONES",
+      "itemDetails": "BLACK JONES Polarized Sunglasses For Men and Women Wayfarer UV Protection Aviator Shape Goggles Sunglass Gun-Metal (Black)-Pack of 1",
+      "price": "499",
+      "image": "BLACK JONES.jpg",
+      "status": true,
+      "createdAt": "2023-07-27T16:48:19.036Z",
+      "updatedAt": "2023-07-27T16:48:19.036Z",
+      "__v": 0,
+      "email": "abc@gmail.com",
+      "quantity": 2,
+      "sub_total": 998,
+      "id": 4
+    },
+    {
+      "_id": "64c6837e239c6c9294dba21b",
+      "itemName": "US DESIRE",
+      "itemDetails": "US DESIRE Retro Square Light Weight Uv Protection Sunglasses Men and Women UV Protection Classic Sunglasses Unisex Mett Black Retro Branded",
+      "price": "320",
+      "image": "US DESIRE.jpg",
+      "status": true,
+      "createdAt": "2023-07-30T15:36:30.090Z",
+      "updatedAt": "2023-07-30T15:36:30.090Z",
+      "__v": 0,
+      "email": "rahul@gmail.com",
+      "quantity": 1,
+      "sub_total": 320,
+      "id": 6
+    }
+  ]
+}

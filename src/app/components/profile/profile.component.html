@@ -1,0 +1,22 @@
+<div class="container py-5">
+    <h1>Profile details:</h1> 
+    <div class="card bg-secondary text-light mb-3" style="max-width: 1200px;">
+     <div class="row no-gutters">
+         <div class="col-md-4">
+             <img src="{{image_path}}{{profileDetails.image}}" class="card-img-top" alt="Profile Image">
+         </div>
+         <div class="col-md-8">
+             <div class="card-body">
+                 <div class="card-header bg-light text-success"><b>User Id: {{profileDetails._id}}</b></div><br>
+                 <h5 class="card-title">{{profileDetails.name}}</h5>
+                 <h6 class="card-title">Contact Number: {{profileDetails.contact}} </h6>
+                 <!-- <p class="card-text"></p> -->
+                 <p class="card-text"><strong>Mail at: {{profileDetails.email}}</strong></p>
+                
+                 <!-- <button (click)="loggingOut()" class="btn btn-outline-light">Logged Out</button> -->
+               </div>
+         </div>
+     </div>
+    
+   </div>
+ </div>

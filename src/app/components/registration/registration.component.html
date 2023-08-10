@@ -1,7 +1,7 @@
 <div class="limiter">
     <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-            <form class="login100-form validate-form" [formGroup]="registaionInputValue" (ngSubmit)="onSubmit()">
+            <form class="login100-form validate-form" [formGroup]="regValue" (ngSubmit)="onSubmit()">
                 <span class="login100-form-title p-b49">Registration</span>
                 <br><br><br>
 
@@ -10,10 +10,10 @@
                     <input class="input100" type="text" formControlName="name" id="name"
                         placeholder="Type your username" >
                     <span class="focus-input100"></span>
-                    <ng-container  *ngIf="registaionInputValue.get('name')?.touched && registaionInputValue.get('name')?.hasError('required')">
+                    <ng-container  *ngIf="regValue.get('name')?.touched && regValue.get('name')?.hasError('required')">
                         <p class="error">required field</p>
                     </ng-container>
-                    <ng-container *ngIf="registaionInputValue.get('name')?.hasError('minlength')">
+                    <ng-container *ngIf="regValue.get('name')?.hasError('minlength')">
                         <p class="error">Enter minimum 2 Character</p>
                     </ng-container>
                   
@@ -25,10 +25,10 @@
                         placeholder="Type your email">
                     <span class="focus-input100"></span>
                     <ng-container
-                        *ngIf="registaionInputValue.get('email')?.touched && registaionInputValue.get('email')?.hasError('required')">
+                        *ngIf="regValue.get('email')?.touched && regValue.get('email')?.hasError('required')">
                         <p class="error">Required field</p>
                     </ng-container>
-                    <ng-container *ngIf="registaionInputValue.get('email')?.hasError('pattern')">
+                    <ng-container *ngIf="regValue.get('email')?.hasError('pattern')">
                         <p class="error">Worng pattern</p>
                     </ng-container>
                 </div>
@@ -38,10 +38,10 @@
                         placeholder="Type your phone">
                     <span class="focus-input100"></span>
                     <ng-container
-                        *ngIf="registaionInputValue.get('contact')?.touched && registaionInputValue.get('contact')?.hasError('required')">
+                        *ngIf="regValue.get('contact')?.touched && regValue.get('contact')?.hasError('required')">
                         <p class="error">Required field</p>
                     </ng-container>
-                    <ng-container *ngIf="registaionInputValue.get('contact')?.hasError('pattern')">
+                    <ng-container *ngIf="regValue.get('contact')?.hasError('pattern')">
                         <p class="error">Worng pattern</p>
                     </ng-container>
                 </div>
@@ -58,18 +58,18 @@
                     <span class="eyeicon" (click)="view()">
                         <i [ngClass]="visiable?'fa fa-eye':'fa fa-eye-slash'"></i></span>
                     <ng-container
-                        *ngIf="registaionInputValue.get('password')?.touched && registaionInputValue.get('password')?.hasError('required')">
+                        *ngIf="regValue.get('password')?.touched && regValue.get('password')?.hasError('required')">
                         <p class="error">Required field</p>
                     </ng-container>
-                    <ng-container *ngIf="registaionInputValue.get('password')?.hasError('pattern')">
-                        <p class="error">
+                    <ng-container *ngIf="regValue.get('password')?.hasError('pattern')">
+                        <!-- <p class="error">
                             Password must contain atleast one:- <br>
                             uppercase (A-Z), <br>
                             lowercase (a-z), <br>
                             numeric (0-9) and <br>
                             special character (?=.*[!@#$&*]) <br>
                             Ex:.xyz@123
-                        </p>
+                        </p> -->
                     </ng-container>
                 </div>
                 <br>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class ContactComponent implements OnInit {
   contactFormValue!: FormGroup;
 
-  constructor() { }
+  constructor(private userSer:UserService) { }
 
   ngOnInit(): void {
     this.contactFormValue = new FormGroup({
@@ -22,6 +23,15 @@ export class ContactComponent implements OnInit {
 
   submitData() {
     console.log("Collect Form Value:", this.contactFormValue.value);
+    this.userSer.user_contact(this.contactFormValue.value).subscribe((res:any)=>{
+      console.log(res);
+      if(res.status==200){
+        alert("Your query Successfully send")
+      }else{
+        alert("try Again")
+      }
+      
+    })
   }
 
 }

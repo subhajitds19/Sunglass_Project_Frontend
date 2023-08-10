@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class GlassesComponent implements OnInit {
   userDetails : any = [];
-  baseUrl : any = "http://localhost:2400/";
+  baseUrl : any = "http://localhost:2100/";
   folderPath : string = "upload/";
   image_path : any = "";
 
@@ -17,6 +17,7 @@ export class GlassesComponent implements OnInit {
   ngOnInit(): void {
     this.apiservice.getdata().subscribe((res:any)=>{
       //console.log(res);
+      // if(res.data.status == true){
       this.userDetails = res.data;
       console.log(this.userDetails);
       
@@ -25,14 +26,16 @@ export class GlassesComponent implements OnInit {
         this.image_path = "assets/images/no-user.jpg";
       }
       else{
-        this.image_path = this.baseUrl;
+        this.image_path = this.baseUrl + this.folderPath;
         console.log("image", this.image_path);
         
       }
+    // }
       
       
 
     })
+  
   }
 
 }

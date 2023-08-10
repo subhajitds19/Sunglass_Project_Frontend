@@ -67,18 +67,36 @@
                               <li class="nav-item">
                                  <a class="nav-link" routerLink="glasses">Our Glasses</a>
                               </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="shop.html">Shop</a>
-                              </li>
+                             
                               <li class="nav-item">
                                  <a class="nav-link"  routerLink="contact">Contact Us</a>
                               </li>
+                              <ng-container *ngIf="!loggedIn()">
+                                 <li class="nav-item d_none login_btn" >
+                                    <a class="nav-link" routerLink="login">Login</a>
+                                 </li>
+                                 <li class="nav-item d_none">
+                                    <a class="nav-link" routerLink="registration">Register</a>
+                                 </li>
+                              </ng-container>
+
+                              <ng-container  *ngIf="loggedIn()">
+                                 <li class="nav-item">
+                                    <a class="nav-link" routerLink="cart">Cart</a>
+                                 </li>
+                             
                               <li class="nav-item d_none login_btn">
-                                 <a class="nav-link" routerLink="login">Login</a>
+                                 <a class="nav-link" (click)="logOut()">Logout</a>
                               </li>
                               <li class="nav-item d_none">
-                                 <a class="nav-link" routerLink="registration">Register</a>
+                                 <a class="nav-link" routerLink="profile">Profile</a>
                               </li>
+                              <!-- <li class="nav-item d_none">
+                                 <a class="nav-link" >Add To Cart</a>
+                              </li> -->
+                             
+                           </ng-container>
+                             
                               <li class="nav-item d_none sea_icon">
                                  <a class="nav-link" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i><i class="fa fa-search" aria-hidden="true"></i></a>
                               </li>
@@ -86,6 +104,8 @@
                         </div>
                      </nav>
                   </div>
+                  <ng-container *ngIf="loggedIn()"> <p>Hello, {{name}}</p></ng-container>
+                 
                </div>
             </div>
          </div>

@@ -1,0 +1,64 @@
+<div *ngIf="cartProducts.length > 0; else emptyCart">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" >Sl No</th>
+          <th scope="col" >Image</th>
+          <th scope="col" >Item Name</th>
+          <!-- <th scope="col" class="table-danger">Item Details</th> -->
+          <th scope="col" >Price</th>
+          <th scope="col" >Quantity</th>
+          <th scope="col" >SubTotal</th>
+          <th scope="col" >Remove</th>
+          <!-- <th scope="col" class="table-primary" colspan="7" rowspan="3">Total</th> -->
+        </tr>
+      </thead>
+      <tbody *ngFor="let cart of cartProducts; let i =index">
+        <tr>
+          <!-- <th scope="row">1</th> -->
+          <td >{{i+1}}</td>
+          <td >
+            <img src="{{image_path}}{{cart.image}}" alt="image" height="50px" width="50px">
+          </td>
+          <td>{{cart.itemName}}</td>
+          <!-- <td>{{cartp.itemDetails.slice(0,20)}}</td> -->
+          <td>{{cart.price}}</td>
+          
+          <td><button type="button"(click)="inc(cart.id)"> + </button> {{cart.quantity}} <button type="button" (click)="dec(cart.id)"> - </button>
+  
+          </td>
+          <td >{{ cart.quantity*cart.price }}</td>
+          <!-- <td><strong>{{}}</strong></td> -->
+          <td >
+            <button class="btn btn-danger" (click)="delete(cart.id)">Delete
+              <i class="fa-sharp fa-solid fa-trash"></i>
+  
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <h3>Total: {{grandtotal}}</h3>
+      <!-- <ng-container *ngFor="let a of cartProducts ">
+        <h3>Grand Total:{{a.quantity*a.price}}</h3>
+      </ng-container> -->
+     
+    </div>
+    <hr>
+    <div class="buy">
+      <button class="btn btn-outline-primary" (click)="deleteByEmail()">Buy Now</button>
+    </div>
+  </div>
+  
+  
+  
+  <ng-template #emptyCart>
+    <div class="card" style="width: mt-4;">
+      <div class="card-body">
+        <h5 class="card-title">Your cart is empty</h5>
+        <a routerLink="/menu" class="shop">Shop Now</a>
+      </div>
+    </div>
+  </ng-template>
