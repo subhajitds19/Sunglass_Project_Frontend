@@ -37,6 +37,7 @@ export class CartComponent implements OnInit {
       this.cartSer.cartData().subscribe((res:any)=>{
         this.allCartProducts = res;
         this.cartProducts = this.allCartProducts.filter((data:any)=>data.email == window.localStorage.getItem('email'));
+        this.grandtotal = 0;
         for(let i = 0; i < this.cartProducts.length; i++){
           this.grandtotal += this.cartProducts[i].sub_total;
          }
@@ -92,7 +93,12 @@ export class CartComponent implements OnInit {
       this.cartSer.cartDelete(id).subscribe((res:any)=>{
         console.log("Cart Delete", res);
         this.cartSer.cartData().subscribe((res:any)=>{
-          this.cartProducts = res;
+          this.allCartProducts = res;
+          this.cartProducts = this.allCartProducts.filter((data:any)=>data.email == window.localStorage.getItem('email'));
+          this.grandtotal = 0;
+          for(let i = 0; i < this.cartProducts.length; i++){
+            this.grandtotal += this.cartProducts[i].sub_total;
+          }
         })
         
       });

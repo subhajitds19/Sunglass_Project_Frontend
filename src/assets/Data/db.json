@@ -1,21 +1,6 @@
 {
   "cart": [
     {
-      "_id": "64c29fd39cecd674ee67dd8f",
-      "itemName": "BLACK JONES",
-      "itemDetails": "BLACK JONES Polarized Sunglasses For Men and Women Wayfarer UV Protection Aviator Shape Goggles Sunglass Gun-Metal (Black)-Pack of 1",
-      "price": "499",
-      "image": "BLACK JONES.jpg",
-      "status": true,
-      "createdAt": "2023-07-27T16:48:19.036Z",
-      "updatedAt": "2023-07-27T16:48:19.036Z",
-      "__v": 0,
-      "email": "rahul@gmail.com",
-      "quantity": 1,
-      "sub_total": 499,
-      "id": 1
-    },
-    {
       "_id": "64c682a3239c6c9294dba217",
       "itemName": "Anemxer",
       "itemDetails": "Anemxer® CX-RR Original Polarized Sunglasses for Men and Women Shatterproof Stylish Branded with 100% UV Protection for Outdoor Sunlight Usage, Hiking, Picnic and Sports(2023)",
@@ -26,23 +11,23 @@
       "updatedAt": "2023-07-30T15:32:51.879Z",
       "__v": 0,
       "email": "rahul@gmail.com",
-      "quantity": 3,
-      "sub_total": 1797,
+      "quantity": 4,
+      "sub_total": 2396,
       "id": 2
     },
     {
-      "_id": "64c29fd39cecd674ee67dd8f",
-      "itemName": "BLACK JONES",
-      "itemDetails": "BLACK JONES Polarized Sunglasses For Men and Women Wayfarer UV Protection Aviator Shape Goggles Sunglass Gun-Metal (Black)-Pack of 1",
-      "price": "499",
-      "image": "BLACK JONES.jpg",
+      "_id": "64c2a1349cecd674ee67dd92",
+      "itemName": "ELEGANTE",
+      "itemDetails": "ELEGANTE Unisex Adult Square Non-Polarization Sunglasses",
+      "price": "658",
+      "image": "ELEGANTE.jpg",
       "status": true,
-      "createdAt": "2023-07-27T16:48:19.036Z",
-      "updatedAt": "2023-07-27T16:48:19.036Z",
+      "createdAt": "2023-07-27T16:54:12.003Z",
+      "updatedAt": "2023-07-27T16:54:12.003Z",
       "__v": 0,
       "email": "abc@gmail.com",
-      "quantity": 2,
-      "sub_total": 998,
+      "quantity": 3,
+      "sub_total": 1974,
       "id": 4
     },
     {
@@ -58,7 +43,7 @@
       "email": "rahul@gmail.com",
       "quantity": 1,
       "sub_total": 320,
-      "id": 6
+      "id": 5
     }
   ]
 }
