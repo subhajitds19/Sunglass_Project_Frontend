@@ -11,6 +11,7 @@ export class GlassesComponent implements OnInit {
   baseUrl : any = "http://localhost:2100/";
   folderPath : string = "upload/";
   image_path : any = "";
+  searchedGlasses : any = [];
 
   constructor(private apiservice:UserService) { }
 
@@ -36,6 +37,17 @@ export class GlassesComponent implements OnInit {
 
     })
   
+  }
+  onSearch(search:any){
+     console.log(search.value);
+     let value = search.value;
+     if(value.length >= 2){
+      this.searchedGlasses = this.userDetails.filter((data:any)=>{
+        return data.itemName.toLowerCase().includes(value.toLowerCase())
+      });
+      console.log(this.searchedGlasses);
+      
+     }
   }
 
 }

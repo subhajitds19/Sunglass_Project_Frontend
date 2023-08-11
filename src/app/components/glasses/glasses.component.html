@@ -2,6 +2,14 @@
       <div class="glasses">
          <div class="container">
             <div class="row">
+               <div class="col-lg-4"></div>
+               <div class="col-lg-8 ">
+                  <input type="search" placeholder="search" class="form-control" #search (keyup)="onSearch(search)" name="" id="">
+               </div>
+            </div>
+           
+            <div class="row">
+              
                <div class="col-md-10 offset-md-1">
                   <div class="titlepage">
                      <h2>Our Glasses</h2>
@@ -14,69 +22,44 @@
          </div>
          <div class="container-fluid">
             <div class="row">
-               <ng-container *ngFor="let prod of userDetails">
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" *ngIf="prod.status == true">
-                  <div class="glasses_box">
-                     <!-- <figure><img src="images/glass1.png" alt="#"/></figure> -->
-                    
-                      <figure><img src="{{image_path}}{{prod.image}}" style="max-width: 70%; height: 120px;"></figure>
-                     
-                     <h3><span class="blu">Rs.</span>{{prod.price}}</h3>
-                     <p>{{prod.itemName}}</p>
-                     <p> <a routerLink="/details/{{prod._id}}"><button class="btn btn-info">Details</button></a></p>
-                        
-                  </div>
-               </div>
-               </ng-container>
-               <!-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass2.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass3.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass4.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass5.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass6.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass7.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div> -->
-               <!-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass8.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div> -->
+               <ng-container *ngIf="searchedGlasses.length != 0 then searchedBlock else elseBlock"> </ng-container>
+                  <ng-template #searchedBlock>
+                     <ng-container *ngFor="let prod of searchedGlasses">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" *ngIf="prod.status == true">
+                           <div class="glasses_box">
+                              <!-- <figure><img src="images/glass1.png" alt="#"/></figure> -->
+                             
+                               <figure><img src="{{image_path}}{{prod.image}}" style="max-width: 70%; height: 120px;"></figure>
+                              
+                              <h3><span class="blu">Rs.</span>{{prod.price}}</h3>
+                              <p>{{prod.itemName}}</p>
+                              <p> <a routerLink="/details/{{prod._id}}"><button class="btn btn-info">Details</button></a></p>
+                                 
+                           </div>
+                        </div>
+                        </ng-container>
+
+                  </ng-template>
+                  <ng-template #elseBlock>
+                     <ng-container *ngFor="let prod of userDetails">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" *ngIf="prod.status == true">
+                           <div class="glasses_box">
+                              <!-- <figure><img src="images/glass1.png" alt="#"/></figure> -->
+                             
+                               <figure><img src="{{image_path}}{{prod.image}}" style="max-width: 70%; height: 120px;"></figure>
+                              
+                              <h3><span class="blu">Rs.</span>{{prod.price}}</h3>
+                              <p>{{prod.itemName}}</p>
+                              <p> <a routerLink="/details/{{prod._id}}"><button class="btn btn-info">Details</button></a></p>
+                                 
+                           </div>
+                        </div>
+                        </ng-container>
+
+                  </ng-template>
+              
+               
+               
                <div class="col-md-12" style="margin-bottom: 25px">
                   <a class="read_more" href="#">Read More</a>
                </div>

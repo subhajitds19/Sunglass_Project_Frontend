@@ -19,6 +19,7 @@ import { StorageService } from './services/storage.service';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CartServiceService } from './services/cart-service.service';
 import { CartComponent } from './components/cart/cart.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { CartComponent } from './components/cart/cart.component';
     LoginComponent,
     DetailsComponent,
     ProfileComponent,
-    CartComponent
+    CartComponent,
+    FilterPipe
    
   ],
   imports: [

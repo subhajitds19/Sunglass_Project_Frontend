@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
     this.token = this.strService.getToken();
     if(this.token){
       this.data = this.strService.getdata();
-      console.log("data from header", this.data);
+      //console.log("data from header", this.data);
       this.name = this.data[0].name;
       
     }
