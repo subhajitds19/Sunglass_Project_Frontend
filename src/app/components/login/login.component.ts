@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
                                  
                                   userResponse.user._id,
                                   userResponse.token)
-                                  this.router.navigate(['/home']);
+                                  this.router.navigate(['/glasses']);
       }
       else{
         alert(userResponse.message);

@@ -1,11 +1,19 @@
+
+     
+
+
 <div class="card">
-    <img src="{{image_path}}{{single_details.image}}" class="card-img-top" alt="" style="height: auto; max-width: 54%;">
-    <div class="card-body">
+  <div class="row">
+    <div class="col-md-4">
+    <img src="{{image_path}}{{single_details.image}}" class="img-fluid rounded-start" style="height: auto; max-width: 65%; margin-top: 25px; margin-left: 25px;"  alt="" >
+  </div>
+  <div class="col-md-8">
+    <div class="card-body" >
       <h5 class="card-title">Name: {{single_details.itemName}}</h5>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Description: {{single_details.itemDetails}}</li>
-      <li class="list-group-item">Price: {{single_details.price}}</li>
+    <ul class="list-group list-group-flush" >
+      <li class="list-group-item" >Description: {{single_details.itemDetails}}</li>
+      <li class="list-group-item" >Price: {{single_details.price}}</li>
     </ul>
     <div class="card-body">
       <button class="btn btn-primary" (click)="addtocart(single_details)">Add to Cart</button>
@@ -13,3 +21,6 @@
       <!-- <a href="#" class="card-link">Another link</a> -->
     </div>
   </div>
+ </div>
+</div>
+<!-- style="height: auto; max-width: 54%;" -->

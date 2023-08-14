@@ -1,0 +1,9 @@
+
+.card{
+    border:.1px solid #000000;
+    margin: auto;
+    margin-left: 1px;
+    /* margin-right: 5px; */
+    /* margin-top: 5px; */
+    margin-bottom: 1px;
+}

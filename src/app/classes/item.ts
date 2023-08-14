@@ -31,3 +31,14 @@ export class Cart{
     "quantity"!: number
     "sub_total"!:number
 }
+
+export class Buynow{
+    name !: string
+    email !: string
+    address !: string
+    city !: string
+    state !: string
+    pincode !: string
+    contact !: string
+
+}

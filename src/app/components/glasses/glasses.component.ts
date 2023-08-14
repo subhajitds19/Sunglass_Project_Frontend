@@ -12,6 +12,9 @@ export class GlassesComponent implements OnInit {
   folderPath : string = "upload/";
   image_path : any = "";
   searchedGlasses : any = [];
+  totalRows : number = 0;
+  page : number = 1;
+  allUserDetails : any = [];
 
   constructor(private apiservice:UserService) { }
 
@@ -19,7 +22,8 @@ export class GlassesComponent implements OnInit {
     this.apiservice.getdata().subscribe((res:any)=>{
       //console.log(res);
       // if(res.data.status == true){
-      this.userDetails = res.data;
+      this.allUserDetails = res.data;
+      this.userDetails = this.allUserDetails.filter((data:any)=>data.status==true);
       console.log(this.userDetails);
       
       if(this.userDetails.image == "undefined" || this.userDetails.image == "")

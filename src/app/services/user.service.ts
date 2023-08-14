@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import { Item, User, Contact } from '../classes/item';
+import { Item, User, Contact, Buynow } from '../classes/item';
 import { StorageService } from './storage.service';
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,8 @@ export class UserService {
   reg_api : any = "http://localhost:2100/registration";
   log_api : any = "http://localhost:2100/login";
   contact_api : any = "http://localhost:2100/contact";
-  User_profile_api : any = "http://localhost:2100/profile"
+  User_profile_api : any = "http://localhost:2100/profile";
+  buynow_api : any = "http://localhost:2100/buynow"
 
   constructor(private http : HttpClient, private strSer:StorageService) { }
   getdata():Observable<Item[]>{
@@ -39,6 +40,10 @@ export class UserService {
     // let uid = data[0].id;
     return this.http.get<User[]>(`${this.User_profile_api}/${uid}`);
 
+  }
+
+  buynow_create(formdata:any):Observable<Buynow[]>{
+    return this.http.post<Buynow[]>(this.buynow_api, formdata);
   }
 
   errorHandler(error: HttpErrorResponse) {

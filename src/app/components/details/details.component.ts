@@ -17,6 +17,7 @@ export class DetailsComponent implements OnInit {
   cartDetails : any;
   exitingCart : any = {};
   CartProduct : any = {};
+  email:any
 
   constructor( private userSer:UserService,
     private aRoute:ActivatedRoute, private cartSer:CartServiceService, private route : Router) { }
@@ -38,6 +39,13 @@ export class DetailsComponent implements OnInit {
   addtocart(details:any){
     this.cartDetails = details;
     console.log(this.cartDetails);
+    this.email = window.localStorage.getItem('email');
+    
+    if(!this.email){
+      alert('You need to login first to view the webpage ')
+      this.route.navigate(['/login']);
+  }
+  else{
 
     this.cartSer.cartData().subscribe((res:any)=>{
       console.log(res);
@@ -85,6 +93,7 @@ export class DetailsComponent implements OnInit {
       
       
     })
+  }
 
     
 

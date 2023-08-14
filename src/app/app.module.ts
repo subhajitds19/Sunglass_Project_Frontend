@@ -20,6 +20,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { CartServiceService } from './services/cart-service.service';
 import { CartComponent } from './components/cart/cart.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { BuynowComponent } from './components/buynow/buynow.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -36,14 +39,17 @@ import { FilterPipe } from './pipes/filter.pipe';
     DetailsComponent,
     ProfileComponent,
     CartComponent,
-    FilterPipe
+    FilterPipe,
+    BuynowComponent,
+    PageNotFoundComponent
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [UserService, StorageService, CartServiceService],
   bootstrap: [AppComponent]

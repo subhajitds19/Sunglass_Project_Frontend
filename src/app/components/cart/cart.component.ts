@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartServiceService } from 'src/app/services/cart-service.service';
 
 @Component({
@@ -16,10 +17,13 @@ export class CartComponent implements OnInit {
   newIncData : any ;
   newDecData : any;
   allCart : any = {};
+ 
 
-  constructor(private cartSer : CartServiceService) { }
+  constructor(private cartSer : CartServiceService, private router:Router) { }
 
   ngOnInit(): void {
+    
+    
     this.cartSer.cartData().subscribe((res:any)=>{
       this.allCartProducts = res;
       this.cartProducts = this.allCartProducts.filter((data:any)=>data.email == window.localStorage.getItem('email'));
@@ -29,6 +33,7 @@ export class CartComponent implements OnInit {
       this.image_path = this.baseUrl+this.folderPath;
     });
     // this.grandTotal();
+  
   }
 
   delete(id:any){
@@ -115,26 +120,26 @@ export class CartComponent implements OnInit {
     // this.cartSer.deleteByEmail(String(cartEmail)).subscribe((res:any)=>{
     //   console.log(res);
     // })
-    this.cartSer.cartData().subscribe((res:any)=>{
-      this.allCartProducts = res;
-      this.cartProducts = this.allCartProducts.filter((data:any)=>data.email == window.localStorage.getItem('email'));
+    // this.cartSer.cartData().subscribe((res:any)=>{
+    //   this.allCartProducts = res;
+    //   this.cartProducts = this.allCartProducts.filter((data:any)=>data.email == window.localStorage.getItem('email'));
      
-      for(let i = 0; i < this.cartProducts.length; i++){
-        let id = this.cartProducts[i].id;
-         this.cartSer.deleteByEmail(id).subscribe((res:any)=>{
-      console.log(res);
-    })
-      }
-      this.cartSer.cartData().subscribe((res:any)=>{
-        this.allCartProducts = res;
-        this.cartProducts = this.allCartProducts.filter((data:any)=>data.email == window.localStorage.getItem('email'));
+    //   for(let i = 0; i < this.cartProducts.length; i++){
+    //     let id = this.cartProducts[i].id;
+    //      this.cartSer.deleteByEmail(id).subscribe((res:any)=>{
+    //   console.log(res);
+    // })
+    //   }
+    //   this.cartSer.cartData().subscribe((res:any)=>{
+    //     this.allCartProducts = res;
+    //     this.cartProducts = this.allCartProducts.filter((data:any)=>data.email == window.localStorage.getItem('email'));
 
-      })
-    })
+    //   })
+    // })
 
    
     
-      
+      this.router.navigate(['/buynow']);
     
     
   }
